@@ -30,7 +30,7 @@ export const App = () => {
   };
 
   function changeFilter(evt) {
-    setFilter(evt.currentTarget.value);
+    setFilter(evt.currentTarget.value.toLowerCase());
   };
   
   function deleteContact(contactId) {
@@ -40,7 +40,7 @@ export const App = () => {
   };
 
   const getVisibleContacts = contacts.filter(contact =>
-    contact.name.toLowerCase().includes(filter)
+    contact.name.toLowerCase().includes(filter.toLowerCase())
   );
 
   return (
